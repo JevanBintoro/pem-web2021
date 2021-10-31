@@ -1,0 +1,70 @@
+html> 
+<head> 
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>FORM REGISTRASI</title>
+ 
+	<link rel="stylesheet" href="assets/css/bootstrap.css"> 
+</head> 
+<body> 
+ 
+	<div class="container">
+ 
+		<center>
+			<h3>FORM REGISTRASI</h3>
+			<h4>MASUKKAN DATA</h4>
+		</center>
+		<br/><br/>
+ 
+		<table class="table">
+			<thead>
+				<tr>
+					<th>NO</th>
+					<th>DATA PENDAFTARAN</th>							
+				</tr>
+			</thead>
+			<tbody>
+                <form action="contact.php" method="POST">
+				<tr>
+                    <td>1</td>
+					<td><label for="nama">Nama Lengkap</label></td>
+					<td><input type="text" id="nama" name="nama"></td>
+					
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><label for="nik">NIK</label></td>
+					<td><input type="text" id="nik" name="nik"></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><label for="tahun">Tahun Lulus</label></td>
+					<td><input type="number" id="tahun" name="tahun"></td>
+					
+				</tr>
+				<tr>
+					<td>4</td>
+					<td><label for="tanggal">Tanggal Lahir</label></td>
+					<td><input type="date" id="tanggal" name="tanggal"></td>
+				</tr>
+                <tr>
+					<td>5</td>
+					<td><label for="alamat">Alamat</label></td>
+					<td><input type="text" id="alamat" name="alamat"></td>
+				</tr>
+                <tr>
+					<td>6</td>
+					<td><label for="email">Email</label></td>
+					<td><input type="text" id="email" name="email"></td>
+				</tr>
+                </form> 
+			</tbody>
+		</table>
+ 
+	</div>
+ 
+	<script src="assets/js/jquery.js"></script> 
+	<script src="assets/js/popper.js"></script> 
+	<script src="assets/js/bootstrap.js"></script>
+</body> 
+</html>
