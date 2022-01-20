@@ -1,0 +1,419 @@
+﻿<!doctype html>
+<html>
+<head>
+    <!-- ... -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="../tugasakhir/styles/main.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../tugasakhir/FrontEnd/plugins/fontawesome-free/css/all.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="../tugasakhir/FrontEnd/plugins/select2/css/select2.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../tugasakhir/FrontEnd/dist/css/adminlte.min.css">
+
+</head>
+<body class="bg-blue-50 overflow-x-hidden">
+
+    <!-- Header Navigation Section -->
+    <header>
+        <nav class="bg-white shadow-lg fadeInTop">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+                    <div class="flex space-x-7">
+                        <div>
+                            <!-- Website Logo -->
+                            <a href="#" class="flex items-center py-4 px-2">
+                                <img src="../tugasakhir/image/logoresep1.jpg" alt="Logo" width="40%" height="40%">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Secondary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-3 ">
+                        <a href="home.html" class="py-4 px-4 text-base font-regular primary-color"><b>Home</b></a>
+                        <a href="#" class="py-4 px-4 text-base font-regular primary-color"><b>Menu Resep</b></a>
+
+                        
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="outline-none mobile-menu-button">
+                            <svg class=" w-6 h-6 text-gray-500 hover:text-blue-600"
+                                 x-show="!showMenu"
+                                 fill="none"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 stroke-width="2"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile menu -->
+            <div class="hidden mobile-menu">
+                <ul class="">
+                    <li id="nav-profile-img-mobile"><a href="profile.html" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300 text-base font-regular">Profile</a></li>
+                    <li class="active"><a href="home.html" class="block text-sm px-2 py-4 text-white bg-blue-600 text-base font-regular">Home</a></li>
+                    <li><a href="menu.html" class="block text-sm px-2 py-4 hover:bg-blue-600 transition duration-300 text-base font-regular">Menu Resep</a></li>
+                   
+                </ul>
+            </div>
+            <script>
+                const btn = document.querySelector("button.mobile-menu-button");
+                const menu = document.querySelector(".mobile-menu");
+
+                btn.addEventListener("click", () => {
+                    menu.classList.toggle("hidden");
+                });
+            </script>
+        </nav>
+    </header>
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <h2 class="text-center display-4">Cari Resep</h2>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">                    
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <input type="search" class="form-control form-control-lg" id="myInput" onkeyup="myFunction()" placeholder="Type your keywords here" value="">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-lg btn-default">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-10 offset-md-1">
+                    <div class="list-group">
+                        <ul id="myUL">
+                            <li>
+                                <div class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img class="img-fluid" src="../tugasakhir/image/migoreng.jpg" alt="Photo" style="max-height: 160px;">
+                                        </div>
+                                        <div class="col px-4">
+                                            <div>
+                                                <a href="migoreng.html" class="float-right btn btn-default">
+                                                    Show Detail
+                                                </a>
+                                                <h3>Mie Goreng</h3>
+                                                <p class="mb-0">Mie Lezat yang digoreng dengan panas yang sempurna sehingga mempertahankan kekenyalan dari Mie tersebut</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img class="img-fluid" src="../tugasakhir/image/miayam.jpg" alt="Photo" style="max-height: 160px;">
+                                        </div>
+                                        <div class="col px-4">
+                                            <div>
+                                                <a href="miayam.html" class="float-right btn btn-default">
+                                                    Show Detail
+                                                </a>
+                                                <h3>Mie Ayam</h3>
+                                                <p class="mb-0">Mie Lezat dengan kaldu ayam asli pasti bikin lidah anda bergoyang</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img class="img-fluid" src="../tugasakhir/image/nasigoreng.jpg" alt="Photo" style="max-height: 160px;">
+                                        </div>
+                                        <div class="col px-4">
+                                            <div>
+                                                <a href="nasigoreng.html" class="float-right btn btn-default">
+                                                    Show Detail
+                                                </a>
+                                                <h3>Nasi Goreng</h3>
+                                                <p class="mb-0">Nasi Goreng Special dengan taburan daging Ham yang sesuai dengan selera anda</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img class="img-fluid" src="../tugasakhir/image/ayamgoreng.jpg" alt="Photo" style="max-height: 160px;">
+                                        </div>
+                                        <div class="col px-4">
+                                            <div>
+                                                <a href="ayamgoreng.html" class="float-right btn btn-default">
+                                                    Show Detail
+                                                </a>
+                                                <h3>Ayam Goreng</h3>
+                                                <p class="mb-0">Ayam Goreng Kampung dengan daging yang lembut dan renyah</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                                                     
+                            <li>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <img class="img-fluid" src="../tugasakhir/image/sotoayam.jpg" alt="Photo" style="max-height: 160px;">
+                                            </div>
+                                            <div class="col px-4">
+                                                <div>
+                                                    <a href="sotoayam.html" class="float-right btn btn-default">
+                                                        Show Detail
+                                                    </a>
+                                                    <h3>Soto Ayam</h3>
+                                                    <p class="mb-0">Soto Ayam dengan kuah yang segar dan sedap</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li> 
+
+                                <li>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <img class="img-fluid" src="../tugasakhir/image/cap cay.jpg" alt="Photo" style="max-height: 160px;">
+                                            </div>
+                                            <div class="col px-4">
+                                                <div>
+                                                    <a href="capcay.html" class="float-right btn btn-default">
+                                                        Show Detail
+                                                    </a>
+                                                    <h3>Cap Cay Kuah</h3>
+                                                    <p class="mb-0">Cap Cay kuah dengan berbagai macam sayuran sehat</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <img class="img-fluid" src="../tugasakhir/image/mendoan.jpg" alt="Photo" style="max-height: 160px;">
+                                            </div>
+                                            <div class="col px-4">
+                                                <div>
+                                                    <a href="mendoan.html" class="float-right btn btn-default">
+                                                        Show Detail
+                                                    </a>
+                                                    <h3>Mendoan</h3>
+                                                    <p class="mb-0">Mendoan dengan sayuran yang crispy dan gurih</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <img class="img-fluid" src="../tugasakhir/image/supayam.jpg" alt="Photo" style="max-height: 160px;">
+                                            </div>
+                                            <div class="col px-4">
+                                                <div>
+                                                    <a href="supayam.html" class="float-right btn btn-default">
+                                                        Show Detail
+                                                    </a>
+                                                    <h3>Sup Ayam</h3>
+                                                    <p class="mb-0">Sup Ayam dengan ayam segar dan berbagai sayuran sehat</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <img class="img-fluid" src="../tugasakhir/image/gadogado.jpg" alt="Photo" style="max-height: 160px;">
+                                            </div>
+                                            <div class="col px-4">
+                                                <div>
+                                                    <a href="gadogado.html" class="float-right btn btn-default">
+                                                        Show Detail
+                                                    </a>
+                                                    <h3>Gado-Gado</h3>
+                                                    <p class="mb-0">Gado-Gado dengan berbagai sayuran segar dan sambel kacang yang lezat</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <img class="img-fluid" src="../tugasakhir/image/bubur ayam.jpg" alt="Photo" style="max-height: 160px;">
+                                            </div>
+                                            <div class="col px-4">
+                                                <div>
+                                                    <a href="buburayam.html" class="float-right btn btn-default">
+                                                        Show Detail
+                                                    </a>
+                                                    <h3>Bubur Ayam</h3>
+                                                    <p class="mb-0">Bubur Ayam dengan cakue dan telor yang hangat menyegarkan</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <img class="img-fluid" src="../tugasakhir/image/es krim.jpg" alt="Photo" style="max-height: 160px;">
+                                            </div>
+                                            <div class="col px-4">
+                                                <div>
+                                                    <a href="eskrim.html" class="float-right btn btn-default">
+                                                        Show Detail
+                                                    </a>
+                                                    <h3>Es Krim</h3>
+                                                    <p class="mb-0">Es Krim rasa susu yang dingin menyegarkan</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <img class="img-fluid" src="../tugasakhir/image/jusalpukat.jpg" alt="Photo" style="max-height: 160px;">
+                                            </div>
+                                            <div class="col px-4">
+                                                <div>
+                                                    <a href="jusalpukat.html" class="float-right btn btn-default">
+                                                        Show Detail
+                                                    </a>
+                                                    <h3>Jus Alpukat</h3>
+                                                    <p class="mb-0">Jus Alpukat yang sehat dan menyegarkan</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="../tugasakhir/FrontEnd/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../tugasakhir/FrontEnd/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="../tugasakhir/FrontEnd/plugins/select2/js/select2.full.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../tugasakhir/FrontEnd/dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../tugasakhir/FrontEnd/dist/js/demo.js"></script>
+
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("h3")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        $(function () {
+            $('.select2').select2()
+        });
+    </script>
+    <section class="bg-blue-600">
+		<div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+			<div class="flex justify-center mt-8 space-x-6">
+				<a href="https://id-id.facebook.com/" class="text-gray-50 hover:text-white">
+					<span class="sr-only">Facebook</span>
+					<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+						<path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+					</svg>
+				</a>
+				<a href="https://twitter.com" class="text-gray-50 hover:text-white">
+					<span class="sr-only">Twitter</span>
+					<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+					</svg>
+				</a>
+				<a href="https://github.com" class="text-gray-50 hover:text-white">
+					<span class="sr-only">GitHub</span>
+					<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+						<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+					</svg>
+				</a>
+
+			</div>
+			<p class="mt-8 text-base leading-6 text-center text-gray-50">
+				© 2022 Resepkita, Inc. All rights reserved.
+			</p>
+
+	</section>
+</body>
+</html>
